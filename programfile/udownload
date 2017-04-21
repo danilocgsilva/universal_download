@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ -z $1 ]; then
+    echo Please, provides the first argument to be the resource address.
+    exit
+fi
+
+if which wget > /dev/null 2>&1 ; then
+    wget $1
+elif which curl > /dev/null; then
+    curl -o $1
+else
+    echo Neither wget or curl are installed in the system. Can not download. Installs one of those.
+    exit
+fi
