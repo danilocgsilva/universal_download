@@ -8,7 +8,7 @@ fi
 if which wget > /dev/null 2>&1 ; then
     wget $1
 elif which curl > /dev/null; then
-    curl -o $1
+    curl -O $1
 else
     echo Neither wget or curl are installed in the system. Can not download. Installs one of those.
     exit
